@@ -1,0 +1,8 @@
+{
+  "name": "dental-atlas",
+  "version": "1.0.0",
+  "description": "Interactive 2D/3D tooth atlas, conditions guide and daily quiz for dentistry students",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
