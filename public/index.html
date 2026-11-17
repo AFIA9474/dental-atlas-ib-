@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dental Atlas · Bolu Abant İzzet Baysal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Dental Atlas</h1>
+  <p>For dentistry students at Bolu Abant İzzet Baysal University</p>
+  <nav id="tabs">
+    <button data-tab="atlas" class="on">Teeth</button>
+    <button data-tab="conditions">Conditions</button>
+    <button data-tab="quiz">Daily quiz</button>
+  </nav>
+</header>
+
+<main>
+  <section id="atlas">
+    <div class="toggle" id="viewToggle">
+      <button data-view="2d" class="on">2D chart</button>
+      <button data-view="3d">3D model</button>
+    </div>
+    <p class="hint" id="hint">Tap any tooth to read about it.</p>
+    <div id="view2d"><svg id="chart" viewBox="0 0 360 440" role="img" aria-label="Tooth chart"></svg></div>
+    <div id="view3d" hidden><canvas id="gl"></canvas></div>
+  </section>
+
+  <section id="conditions" hidden>
+    <h2>Conditions and treatments</h2>
+    <div id="diseaseList"></div>
+  </section>
+
+  <section id="quiz" hidden>
+    <h2>Today's quiz</h2>
+    <div id="quizBox"></div>
+  </section>
+</main>
+
+<aside id="sheet" hidden>
+  <button id="closeSheet" aria-label="Close">×</button>
+  <div id="sheetBody"></div>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
