@@ -15,6 +15,7 @@ h2{font-size:1.25rem;margin:10px 0}
 .row{display:flex;gap:6px;flex-wrap:wrap}
 .row button{font:inherit;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
 .row button.on{background:var(--amber);color:#1b1305;border-color:var(--amber);font-weight:600}
+.note{color:var(--mute);font-size:.88rem;margin:8px 0}
 button:focus-visible,summary:focus-visible,.t:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
 main{padding-bottom:300px}
 #hint{color:var(--mute);font-size:.9rem;margin:10px 0 8px}
@@ -28,8 +29,8 @@ main{padding-bottom:300px}
 .t rect{fill:#f3efe2;stroke:#5b6b78;stroke-width:1.2;transition:fill .15s}
 .t text{font-size:8px;fill:#40505c;pointer-events:none}
 .t:hover rect{fill:#ffe2b3}
-.t.sel rect{fill:var(--amber);stroke:var(--amber)}
-.t.sel text{font-weight:800;fill:#1b1305}
+.t.sel rect{fill:#e5303a;stroke:#e5303a}
+.t.sel text{font-weight:800;fill:#fff}
 #sheet{position:fixed;left:0;right:0;bottom:0;max-height:46vh;overflow:auto;background:var(--card);border-top:3px solid var(--amber);border-radius:18px 18px 0 0;padding:16px 18px 26px;box-shadow:0 -10px 30px #0008;animation:up .22s ease-out}
 @keyframes up{from{transform:translateY(40px);opacity:0}}
 @media (prefers-reduced-motion:reduce){#sheet{animation:none}}
@@ -53,7 +54,6 @@ details p{margin:8px 0 0;font-size:.93rem}details ul{margin:6px 0 0;padding-left
 .next{font:inherit;padding:10px 18px;border-radius:999px;border:0;background:var(--amber);color:#1b1305;font-weight:600;cursor:pointer}
 </style></head><body>
 <header><h1>Dental Atlas</h1><p>For dentistry students at Bolu Abant İzzet Baysal University</p>
-<div class="row" id="tabs"><button data-tab="atlas" class="on">Teeth</button><button data-tab="cond">Conditions</button><button data-tab="quiz">Daily quiz</button></div></header>
+<div class="row" id="tabs"><button data-tab="atlas" class="on">Teeth</button><button data-tab="learn">Learn</button><button data-tab="cond">Diseases</button><button data-tab="quiz">Daily quiz</button></div></header>
 <main>
 <section id="atlas">
- <div class="row" id="views" style="margin-top:12px"><button data-v="3d" class="on">3D skull</button><button data-v="2d">2D chart</button></div>
