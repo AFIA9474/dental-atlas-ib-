@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dental Atlas · ABİÜ</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c141b;--card:#15212b;--line:#27384a;--ink:#eaf1f5;--mute:#8fa6b6;--amber:#ffb454;--bone:#d9d2bd;--ok:#2fb59f;--bad:#e5646f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 'Bricolage Grotesque',system-ui,sans-serif}
+header,main{max-width:780px;margin:auto;padding:0 16px}
+header{padding-top:18px}
+h1{margin:0;font-size:2rem;font-weight:800;letter-spacing:-.03em}
+header p{margin:2px 0 12px;color:var(--mute);font-size:.9rem}
+h2{font-size:1.25rem;margin:10px 0}
+.row{display:flex;gap:6px;flex-wrap:wrap}
+.row button{font:inherit;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.row button.on{background:var(--amber);color:#1b1305;border-color:var(--amber);font-weight:600}
+button:focus-visible,summary:focus-visible,.t:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+main{padding-bottom:300px}
+#hint{color:var(--mute);font-size:.9rem;margin:10px 0 8px}
+#stage{position:relative;height:62vh;min-height:340px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 35%,#1d3140,#0a1117 75%)}
+#gl{width:100%;height:100%;display:block;touch-action:none}
+#ctl{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;flex-wrap:wrap}
+#ctl button{font:inherit;font-size:.85rem;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:#0c141bcc;color:var(--ink);cursor:pointer}
+#chartBox{display:none}
+#chart{width:100%;max-width:480px;display:block;margin:auto}
+.t{cursor:pointer;outline:none}
+.t rect{fill:#f3efe2;stroke:#5b6b78;stroke-width:1.2;transition:fill .15s}
+.t text{font-size:8px;fill:#40505c;pointer-events:none}
+.t:hover rect{fill:#ffe2b3}
+.t.sel rect{fill:var(--amber);stroke:var(--amber)}
+.t.sel text{font-weight:800;fill:#1b1305}
+#sheet{position:fixed;left:0;right:0;bottom:0;max-height:46vh;overflow:auto;background:var(--card);border-top:3px solid var(--amber);border-radius:18px 18px 0 0;padding:16px 18px 26px;box-shadow:0 -10px 30px #0008;animation:up .22s ease-out}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@media (prefers-reduced-motion:reduce){#sheet{animation:none}}
+#sheet[hidden],[hidden]{display:none!important}
+#sheetBody{max-width:720px;margin:auto}
+#x{position:absolute;right:12px;top:6px;font-size:1.9rem;border:0;background:none;color:var(--ink);cursor:pointer}
+#sheetBody h3{margin:0;font-size:1.3rem}
+.meta{color:var(--mute);font-size:.85rem;margin-bottom:10px}
+dl{margin:0;display:grid;grid-template-columns:7rem 1fr;gap:6px 12px;font-size:.93rem}
+dt{font-weight:600;color:var(--amber)}dd{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips button{font:inherit;font-size:.85rem;padding:5px 11px;border-radius:999px;border:1px solid var(--amber);background:none;color:var(--ink);cursor:pointer}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 0;font-size:.93rem}details ul{margin:6px 0 0;padding-left:20px;font-size:.93rem}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.q h3{margin:0 0 12px;font-size:1.1rem}
+.opt{display:block;width:100%;text-align:left;font:inherit;margin-bottom:8px;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.opt.ok{background:var(--ok);border-color:var(--ok)}.opt.bad{background:var(--bad);border-color:var(--bad)}
+.why{margin:10px 0;font-size:.93rem}.prog{color:var(--mute);font-size:.85rem}
+.next{font:inherit;padding:10px 18px;border-radius:999px;border:0;background:var(--amber);color:#1b1305;font-weight:600;cursor:pointer}
+</style></head><body>
+<header><h1>Dental Atlas</h1><p>For dentistry students at Bolu Abant İzzet Baysal University</p>
+<div class="row" id="tabs"><button data-tab="atlas" class="on">Teeth</button><button data-tab="cond">Conditions</button><button data-tab="quiz">Daily quiz</button></div></header>
+<main>
+<section id="atlas">
+ <div class="row" id="views" style="margin-top:12px"><button data-v="3d" class="on">3D skull</button><button data-v="2d">2D chart</button></div>
